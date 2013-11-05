@@ -65,7 +65,7 @@ String.method('deentityify', function () {
 	
 	// Return the deentifyify method
 	return function () {
-		return this.replace(/&(([^&;]+);/g,
+		return this.replace(/&([^&;]+);/g,
 			function (a, b) {
 				var r = entity[b];
 				return typeof r === 'string' ? r : a;
