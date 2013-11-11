@@ -74,3 +74,33 @@ String.method('deentityify', function () {
 	};
 	
 }());
+
+/*
+*  Functional Ineritance
+*/
+var mammal = function(spec) {
+	
+	var that = {};
+	
+	that.get_name = function() {
+		return spec.name;
+	};
+	
+	that.says = function() {
+		return spec.saying || '';
+	};
+	
+	return that;
+	
+}
+var dog = function(spec) {
+	
+	var that = mammal(spec);
+	
+	that.bark = function() {
+		return that.get_name() + ' says bark, bark';
+	}
+	
+	return that;
+	
+}
